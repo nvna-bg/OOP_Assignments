@@ -29,7 +29,7 @@ public class MainClass {
         // инициализация с различни стойности
         x1 = new boolean[] {true, false, true, false, true, false, true, false, true, false};
         x2 = new byte[] { (byte)0, (byte)0, (byte)1 };
-        x3 = new char[] { 'a', 'b', 'c'};
+        x3 = new char[] { 'a', 'b', 'c' , 'B'};
         x4 = new short[] { (short)1, (short)2 };
         x5 = new int[] { 1, 2, 3 };
         x6 = new long[] { 1l, 2l, 3l };
@@ -47,5 +47,12 @@ public class MainClass {
         //Arrays.sort(x1, (Comparator<Boolean>)(a, b) -> Boolean.compare(a, b));
         Arrays.sort(x9, (Comparator<String>)(a, b) -> a.compareTo(b));
 
+        Color[] x10 = new Color[10];
+        Arrays.fill(x10, new Color(1213123123));
+        Arrays.sort(x10, (Comparator<Color>)(color1, color2) -> color1.compareTo(color2));
+
+        ColorRectangle[] x11 = new ColorRectangle[10];
+        Arrays.fill(x11, new ColorRectangle(0,0,10,10, 12321314));
+        Arrays.sort(x11, (Comparator<ColorRectangle>)(rect1, rect2) -> rect1.compareTo(rect2));
     }
 }
