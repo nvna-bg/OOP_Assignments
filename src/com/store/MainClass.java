@@ -1,11 +1,10 @@
 package com.store;
 
 import java.util.Arrays;
-import java.util.Comparator;
 
 public class MainClass {
     public static void main(String[] abc) {
-        boolean[] x1 = new boolean[10];
+        Boolean[] x1 = new Boolean[10];
         byte[] x2 = new byte[10];
         char[] x3 = new char[10];
         short[] x4 = new short[10];
@@ -27,7 +26,7 @@ public class MainClass {
         Arrays.fill(x9, "hello world");
 
         // инициализация с различни стойности
-        x1 = new boolean[] {true, false, true, false, true, false, true, false, true, false};
+        x1 = new Boolean[] {true, false, true, false, true, false, true, false, true, false};
         x2 = new byte[] { (byte)0, (byte)0, (byte)1 };
         x3 = new char[] { 'a', 'b', 'c' , 'B'};
         x4 = new short[] { (short)1, (short)2 };
@@ -44,15 +43,39 @@ public class MainClass {
         Arrays.sort(x6);
         Arrays.sort(x7);
         Arrays.sort(x8);
-        //Arrays.sort(x1, (Comparator<Boolean>)(a, b) -> Boolean.compare(a, b));
-        Arrays.sort(x9, (Comparator<String>)(a, b) -> a.compareTo(b));
 
-        Color[] x10 = new Color[10];
-        Arrays.fill(x10, new Color(1213123123));
-        Arrays.sort(x10, (Comparator<Color>)(color1, color2) -> color1.compareTo(color2));
+        // синтаксисът за lambda expression-а който сортира е:
+        // "със" -> "двата параметъра a и b" (a, b) "провери дали а е по-голямо от b" return a - b;
+        // т.е. ползваме същата логика за сортиране която ползвахме при писането на compareTo
 
-        ColorRectangle[] x11 = new ColorRectangle[10];
-        Arrays.fill(x11, new ColorRectangle(0,0,10,10, 12321314));
-        Arrays.sort(x11, (Comparator<ColorRectangle>)(rect1, rect2) -> rect1.compareTo(rect2));
+        // в случая с booleans искаме да натрупаме всичките false в началото на масива,
+        // всичките true в края -> ако (а) е true връщаме 1 ( 1 значи по-голямо , следователно ще отиде към края )
+        Arrays.sort(x1, (a, b) -> {return (a != b) ? (a) ? 1 : -1 : 0;});
+        // в случая със String ползваме базовата функция String.compareTo
+        Arrays.sort(x9, (a, b) -> a.compareTo(b));
+
+        Color[] x10 = new Color[] {
+                new Color(1235123123),
+                new Color(55123123),
+                new Color(912813)
+        };
+        //Arrays.fill(x10, new Color(1213123123));
+        Arrays.sort(x10, (color1, color2) -> color1.compareTo(color2));
+
+        ColorRectangle[] x11 = new ColorRectangle[] {
+                new ColorRectangle(0,0,10,10, 12321314),
+                new ColorRectangle(1,1,4,4,13341),
+                new ColorRectangle(0,0,2,2,555123)
+        };
+        //Arrays.fill(x11, new ColorRectangle(0,0,10,10, 12321314));
+        Arrays.sort(x11, (rect1, rect2) -> rect1.compareTo(rect2));
+
+        System.out.println(Arrays.toString(x10));
+        System.out.println(Arrays.toString(x11));
+
+        RectangleArray rectArray = new RectangleArray("rectangle_test.txt");
+
+        System.out.println("total area: " + rectArray.calcSumArea());
+        System.out.println("total perimeter: " + rectArray.calcSumPerimeter());
     }
 }
