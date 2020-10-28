@@ -18,8 +18,15 @@ public class Main {
 //	ColorRectangle envelope = rect.envelopeRectangle(other);
 //	System.out.println(envelope);
 
-	Color c = new Color((256*256*54) + (256*255) + 255);
-	c.setRGBValue(150);
-	System.out.println("" + c.getRValue() + ","+c.getGValue() + "," + c.getBValue());
+//	Color c = new Color((256*256*54) + (256*255) + 255);
+//	c.setRGBValue(150);
+//	System.out.println("" + c.getRValue() + ","+c.getGValue() + "," + c.getBValue());
+
+
+		LibraryBook b1 = new LibraryBook("Kniga 1", false);
+		System.out.println(b1);
+		Reader r1 = new Reader("Georgi", "51232");
+		b1.setReader(r1);
+		System.out.println(b1);
     }
 }

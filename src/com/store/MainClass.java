@@ -8,7 +8,9 @@ public class MainClass {
         byte[] x2 = new byte[10];
         char[] x3 = new char[10];
         short[] x4 = new short[10];
+
         int[] x5 = new int[10];
+
         long[] x6 = new long[10];
         float[] x7 = new float[10];
         double[] x8 = new double[10];
@@ -19,7 +21,7 @@ public class MainClass {
         Arrays.fill(x2, (byte)0);
         Arrays.fill(x3, 'a');
         Arrays.fill(x4, (short)1);
-        Arrays.fill(x5, 10);
+        Arrays.fill(x5, 7);
         Arrays.fill(x6, 1l);
         Arrays.fill(x7, 3.14f);
         Arrays.fill(x8, 3.14);
@@ -30,7 +32,9 @@ public class MainClass {
         x2 = new byte[] { (byte)0, (byte)0, (byte)1 };
         x3 = new char[] { 'a', 'b', 'c' , 'B'};
         x4 = new short[] { (short)1, (short)2 };
-        x5 = new int[] { 1, 2, 3 };
+
+        x5 = new int[] { 3, 1, 5 };
+
         x6 = new long[] { 1l, 2l, 3l };
         x7 = new float[] { 1f, 2f, 3f};
         x8 = new double[] { 1.0, 2.0, 3.0 };
@@ -53,6 +57,10 @@ public class MainClass {
         Arrays.sort(x1, (a, b) -> {return (a != b) ? (a) ? 1 : -1 : 0;});
         // в случая със String ползваме базовата функция String.compareTo
         Arrays.sort(x9, (a, b) -> a.compareTo(b));
+
+        // int compare(int a , int b) {
+        //  return a.compareTo(b);
+        // }
 
         Color[] x10 = new Color[] {
                 new Color(1235123123),

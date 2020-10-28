@@ -66,7 +66,9 @@ public class RectangleArray {
     public double calcSumArea() {
         double sum = 0;
         // ползваме същия синтаксис като от горе
-        for(ColorRectangle rect: rectangles) sum += rect.calcArea();
+        for(ColorRectangle rect: rectangles) {
+            sum += rect.calcArea();
+        }
 
         // еквивалентното изписване е това
         //        for(int i = 0; i < rectangles.length; i++) {
