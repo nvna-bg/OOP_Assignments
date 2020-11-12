@@ -8,9 +8,7 @@ public class MainClass {
         byte[] x2 = new byte[10];
         char[] x3 = new char[10];
         short[] x4 = new short[10];
-
         int[] x5 = new int[10];
-
         long[] x6 = new long[10];
         float[] x7 = new float[10];
         double[] x8 = new double[10];
@@ -32,9 +30,7 @@ public class MainClass {
         x2 = new byte[] { (byte)0, (byte)0, (byte)1 };
         x3 = new char[] { 'a', 'b', 'c' , 'B'};
         x4 = new short[] { (short)1, (short)2 };
-
         x5 = new int[] { 3, 1, 5 };
-
         x6 = new long[] { 1l, 2l, 3l };
         x7 = new float[] { 1f, 2f, 3f};
         x8 = new double[] { 1.0, 2.0, 3.0 };
@@ -68,7 +64,7 @@ public class MainClass {
                 new Color(912813)
         };
         //Arrays.fill(x10, new Color(1213123123));
-        Arrays.sort(x10, (color1, color2) -> color1.compareTo(color2));
+        Arrays.sort(x10);
 
         ColorRectangle[] x11 = new ColorRectangle[] {
                 new ColorRectangle(0,0,10,10, 12321314),
@@ -78,10 +74,15 @@ public class MainClass {
         //Arrays.fill(x11, new ColorRectangle(0,0,10,10, 12321314));
         Arrays.sort(x11, (rect1, rect2) -> rect1.compareTo(rect2));
 
+        // int funcA(ColorRectangle rect1, ColorRectangle rect2) {
+        //      return rect1.compareTo(rect2);
+        // }
+
         System.out.println(Arrays.toString(x10));
         System.out.println(Arrays.toString(x11));
 
         RectangleArray rectArray = new RectangleArray("rectangle_test.txt");
+        System.out.println("sled otvarqneto na fail");
 
         System.out.println("total area: " + rectArray.calcSumArea());
         System.out.println("total perimeter: " + rectArray.calcSumPerimeter());

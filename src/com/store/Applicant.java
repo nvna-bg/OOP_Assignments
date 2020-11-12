@@ -7,7 +7,10 @@ public class Applicant {
     protected GregorianCalendar dob;
     protected double grade;
 
-    public Applicant() {}
+    public Applicant() {
+        dob = new GregorianCalendar();
+        grade = 0;
+    }
 
     public Applicant(String name, GregorianCalendar date, double g) {
         this.name = name;
@@ -36,6 +39,6 @@ public class Applicant {
     public void setGrade(double grade) { this.grade = grade; }
 
     public String toString() {
-        return String.format("Name: %1%,born on %2$,total grade: %3%", name, dob.toString(), grade);
+        return String.format("Name: %1$s,total grade: %2$s", name, grade);
     }
 }

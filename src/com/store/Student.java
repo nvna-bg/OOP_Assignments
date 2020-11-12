@@ -20,8 +20,11 @@ public class Student extends Applicant implements Comparable<Student> {
         this.fak_n = number;
     }
 
+
+
     @Override
     public int compareTo(Student o) {
+        this.name = "";
         return (getGrade() < o.getGrade()) ? -1 : 1;
     }
 
@@ -31,5 +34,9 @@ public class Student extends Applicant implements Comparable<Student> {
 
     public void setFacultyID(String id) {
         this.fak_n = id;
+    }
+
+    public void move() {
+
     }
 }

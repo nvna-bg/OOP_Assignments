@@ -28,5 +28,17 @@ public class Main {
 		Reader r1 = new Reader("Georgi", "51232");
 		b1.setReader(r1);
 		System.out.println(b1);
+
+		Library lib = new Library(new String[] {
+				"Library/book-1.txt",
+				"Library/book-2.txt",
+				"Library/book-3.txt",
+				"Library/book-5.txt",
+				"Library/reader-1.txt",
+				"Library/reader-2.txt"
+		});
+
+		lib.load();
+		lib.outputToConsole();
     }
 }
